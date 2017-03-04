@@ -15,7 +15,7 @@ int main() {
     for (int i = 0; i < imgNum; ++i) {
         for (int y = 0; y < imgSizeY; ++y) {
             for (int x = 0; x < imgSizeX; ++x) {
-                unsigned char color[3] = {0x00, (x+i*5) & 0xFF, 0x00};
+                unsigned char color[3] = {(y-i*2) & 0xFF, (x+i*5) & 0xFF, 0x00};
                 fwrite(color, 1, 3, stdout);
             }
         }
