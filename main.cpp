@@ -10,7 +10,7 @@ int imgNum   = 100;
 
 int main() {
     // change to binary stdout mode (avoid 0x0A be changed into 0x0D 0x0A)
-    setmode(1, _O_BINARY);
+    setmode(2, _O_BINARY);
     
     char *img = new char[imgSizeX*imgSizeY*3];
     
@@ -23,10 +23,10 @@ int main() {
                 img[offset+2] = 0x00;
             }
         }
-        fwrite(img, 1, imgSizeX*imgSizeY*3, stdout);
+        fwrite(img, 1, imgSizeX*imgSizeY*3, stderr);
     }
     
-    fflush(stdout);
+    fflush(stderr);
     delete [] img;
     return 0;
 }
