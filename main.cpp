@@ -8,6 +8,9 @@ int imgSizeX = 1920;
 int imgSizeY = 1080;
 int imgNum   = 0;
 
+int mvX      = 100;
+int mvY      = -20;
+
 int main(int argc, char *argv[]) {
     imgNum = atoi(argv[1]);
     
@@ -20,8 +23,8 @@ int main(int argc, char *argv[]) {
         for (int y = 0; y < imgSizeY; ++y) {
             for (int x = 0; x < imgSizeX; ++x) {
                 int offset = y*imgSizeX*3 + x*3;
-                img[offset+0] = (y-i*2) & 0xFF;
-                img[offset+1] = (x+i*5) & 0xFF;
+                img[offset+0] = (y+i*mvY) & 0xFF;
+                img[offset+1] = (x+i*mvX) & 0xFF;
                 img[offset+2] = 0x00;
             }
         }

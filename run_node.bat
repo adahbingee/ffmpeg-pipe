@@ -1,4 +1,8 @@
-::node main.js > log
-del output.mp4
-node main.js | ffmpeg -f rawvideo -pixel_format rgb24 -video_size 1920x1080 -i - -pix_fmt yuv420p output.mp4
+set inputSettings=-f rawvideo -pix_fmt rgb24 -video_size 1920x1080 -r 60
+::set outputSettings=-vcodec libx265 -pix_fmt yuv420p -r 60
+set outputSettings=-vcodec libx264 -qp 18 -x264opts opencl -pix_fmt yuv420p -r 60
+set outputFile=output.mp4
+
+del %outputFile%
+node main.js | ffmpeg %inputSettings% -i - %outputSettings% %outputFile%
 pause
