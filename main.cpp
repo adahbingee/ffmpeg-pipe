@@ -6,9 +6,11 @@
 
 int imgSizeX = 1920;
 int imgSizeY = 1080;
-int imgNum   = 100;
+int imgNum   = 0;
 
-int main() {
+int main(int argc, char *argv[]) {
+    imgNum = atoi(argv[1]);
+    
     // change to binary stdout mode (avoid 0x0A be changed into 0x0D 0x0A)
     setmode(2, _O_BINARY);
     
