@@ -8,8 +8,8 @@ int imgSizeX = 1920;
 int imgSizeY = 1080;
 int imgNum   = 0;
 
-int mvX      = 100;
-int mvY      = -20;
+int mvX      = 5;
+int mvY      = -2;
 
 int main(int argc, char *argv[]) {
     imgNum = atoi(argv[1]);

@@ -4,5 +4,5 @@ set outputSettings=-vcodec libx264 -qp 18 -x264opts opencl -pix_fmt yuv420p -r 6
 set outputFile=output.mp4
 
 del %outputFile%
-node main.js | ffmpeg %inputSettings% -i - %outputSettings% %outputFile%
+node main.js 2>log | ffmpeg %inputSettings% -i - %outputSettings% %outputFile%
 pause
