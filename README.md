@@ -5,6 +5,8 @@
 * GCC
 * Node.js
 
+And set them to system path
+
 # Steps
 
 ## C++ pipe
